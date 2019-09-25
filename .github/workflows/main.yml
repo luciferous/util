@@ -9,7 +9,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK 1.8
-      uses: olafurpg/setup-scala@v2
+      with:
+        fetch-depth: 3
     - name: Build with SBT
       run: ./sbt clean coverage test coverageReport
